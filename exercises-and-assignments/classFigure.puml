@@ -1,0 +1,64 @@
+@startuml
+
+class Main {
+  + {static} main(String[] args) : void
+}
+
+abstract class Figure {
+  + {abstract} getPerimeter() : double
+  + {abstract} getArea() : double
+}
+
+class Triangle {
+  - sideA : double
+  - sideB : double
+  - sideC : double
+  + Triangle(double sideA, double sideB, double sideC)
+  + getPerimeter() : double
+  + getArea() : double
+}
+
+class Rectangle {
+  - length : double
+  - width : double
+  + Rectangle(double length, double width)
+  + getPerimeter() : double
+  + getArea() : double
+}
+
+class Circle {
+  - radius : double
+  + Circle(double radius)
+  + getPerimeter() : double
+  + getArea() : double
+}
+
+class testTriangle {
+  + testTriangle()
+}
+
+class testRectangle {
+  + testRectangle()
+}
+
+class testCircle {
+  + testCircle()
+}
+
+Main +-- Figure
+Main +-- Triangle
+Main +-- Rectangle
+Main +-- Circle
+Main +-- testTriangle
+Main +-- testRectangle
+Main +-- testCircle
+
+Figure <|-- Triangle
+Figure <|-- Rectangle
+Figure <|-- Circle
+
+testTriangle ..> Triangle : uses
+testRectangle ..> Rectangle : uses
+testCircle ..> Circle : uses
+
+@enduml
