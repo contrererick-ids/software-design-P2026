@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Películas - MovieDB</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>🎬 Descubre Películas</h1>
+        <p class="subtitle">Encuentra tu próxima película favorita</p>
+      </div>
+    </header>
+
+    <div class="search-section">
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Busca películas por título, género, actor..." 
+        >
+        <button id="searchBtn">
+          <span>🔍</span> Buscar
+        </button>
+      </div>
+    </div>
+
+    <div id="results-count" class="results-count"></div>
+    
+    <div id="movies-container" class="movies-grid">
+      <div class="welcome-message">
+        <div class="welcome-icon">🍿</div>
+        <h2>¡Bienvenido!</h2>
+        <p>Escribe el nombre de una película en el buscador para comenzar</p>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Buscando películas...</p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
